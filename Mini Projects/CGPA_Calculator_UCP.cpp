@@ -4,6 +4,7 @@
 using namespace std;
 struct GPA 
 {
+	//Size of arrays depends upon the Transcript of the Student,it can be increased depending upon need 
 	float CGPA;
 	int pre_credits;
 	float GP[40]={0.0};
@@ -104,7 +105,7 @@ int GettingInput(GPA& count, int counter)
 	{
 		
 		if(i!=0)cout << "\t\t\t" << "\t\t\tWELLCOME TO UCP CGPA CALCULATOR\n";
-		cout << "\t\t\t\t" << "Enter the Course name for course " << i + 1 << " (use \"_\" instead of \" \")" << " : "; cin>> count.courses[i]  ;
+		cout << "\t\t\t\t" << "Enter the Course name for course " << i + 1 <<  " : "; cin.ignore(); getline(cin,count.courses[i]);
 		cout << "\t\t\t\t" << "Enter the Credits this course carries : "; cin >> count.credit[i];
 		while (count.credit[i] < 0 || count.credit[i] > 4)
 		{
